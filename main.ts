@@ -1,25 +1,53 @@
 radio.onReceivedNumber(function (receivedNumber) {
-    SuperBit.MotorRunDual(
-    SuperBit.enMotors.M2,
-    255,
-    SuperBit.enMotors.M4,
-    255
-    )
-})
-radio.onReceivedString(function (receivedString) {
-    SuperBit.MotorRunDual(
-    SuperBit.enMotors.M2,
-    -255,
-    SuperBit.enMotors.M4,
-    -255
-    )
-})
-radio.onReceivedValue(function (name, value) {
-    SuperBit.MotorRunDual(
-    SuperBit.enMotors.M2,
-    0,
-    SuperBit.enMotors.M4,
-    0
-    )
+    if (1 == receivedNumber) {
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M2,
+        255,
+        SuperBit.enMotors.M4,
+        255
+        )
+        basic.showLeds(`
+            . . # . .
+            . # # # .
+            # . # . #
+            . . # . .
+            . . # . .
+            `)
+    } else if (2 == receivedNumber) {
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M2,
+        -255,
+        SuperBit.enMotors.M4,
+        -255
+        )
+        basic.showLeds(`
+            . . # . .
+            . . # . .
+            # . # . #
+            . # # # .
+            . . # . .
+            `)
+    } else {
+        SuperBit.MotorRunDual(
+        SuperBit.enMotors.M2,
+        0,
+        SuperBit.enMotors.M4,
+        0
+        )
+        basic.showLeds(`
+            # . # . #
+            . . # . .
+            # # . # #
+            . . # . .
+            # . # . #
+            `)
+    }
 })
 radio.setGroup(200)
+basic.showLeds(`
+    # . . . .
+    . # . . .
+    . . # . #
+    . . . # .
+    . . # . #
+    `)
