@@ -45,9 +45,9 @@ radio.onReceivedNumber(function (receivedNumber) {
 })
 radio.setGroup(200)
 basic.showLeds(`
-    # . . . .
+    # . . # #
     . # . . .
-    . . # . #
-    . . . # .
-    . . # . #
+    . . # # #
+    # . # # .
+    # . # . #
     `)
